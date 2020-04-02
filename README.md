@@ -6,3 +6,6 @@ A new directory will be created with the name of current date/time and files for
 
 Works on CVP 2019.1.X
 
+# Usage
+
+python3 cvpShowrun.py --username cvpadmin --cvpServer X.Y.Z.W
