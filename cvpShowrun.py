@@ -103,18 +103,14 @@ def main():
 
     inventoryList = cvpSession.getInventory()
     os.mkdir(d1)
-    k=0
     for device in inventoryList:
-        print (inventoryList[k]["hostname"]+","+inventoryList[k]["modelName"]+","+inventoryList[k]["version"]+","+inventoryList[k]["ipAddress"]+","+inventoryList[k]["serialNumber"])
-        runningConfig=cvpSession.snapshotDeviceConfig(inventoryList[k]["serialNumber"])
-        filename= inventoryList[k]["hostname"] + "_show_run_" + d1 + ".txt"
-        f = open(d1 + "/" + filename,'w')
-        f.write(runningConfig)
-        k=k+1
+        print (device["hostname"]+","+device["modelName"]+","+device["version"]+","+device["ipAddress"]+","+device["serialNumber"])
+        runningConfig=cvpSession.snapshotDeviceConfig(device["serialNumber"])
+        filename= device["hostname"] + "_show_run_" + d1 + ".txt"
+        with open(d1 + "/" + filename,'w') as f:
+            f.write(runningConfig)
     
     print ("Logout from CVP:%s"% cvpSession.logOut()['data'])
 
 if __name__ == '__main__':
     main()
-
-            
