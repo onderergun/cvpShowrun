@@ -1,11 +1,11 @@
 # cvpShowrun
 
-A script to collect all the running configuration of devices in CloudVision Portal.
+A script to collect all the running configuration of devices in CloudVision Portal. Uses cvprac library.
 
 A new directory will be created with the name of current date/time and files for every device will be written under this directory.
 
-Works on CVP 2019.1.X
+Last tested on CVP 2020.3.1
 
 # Usage
 
-python3 cvpShowrun.py --username cvpadmin --cvpServer X.Y.Z.W
+python3 cvpShowrun.py --username cvpadmin --cvpip X.Y.Z.W
