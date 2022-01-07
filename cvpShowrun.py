@@ -6,7 +6,6 @@ import urllib3
 import ssl
 import argparse
 from getpass import getpass
-import requests
 import time
 import os
 
